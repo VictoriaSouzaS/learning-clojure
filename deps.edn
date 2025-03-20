@@ -1,0 +1,6 @@
+{:paths ["src"]
+ :deps {org.clojure/clojure {:mvn/version "1.11.1"}
+        http-kit/http-kit {:mvn/version "2.5.3"}  ;; Servidor HTTP
+        cheshire/cheshire {:mvn/version "5.11.0"} ;; Parser JSON
+        clj-http/clj-http {:mvn/version "3.12.3"}} ;; Cliente HTTP
+ }
