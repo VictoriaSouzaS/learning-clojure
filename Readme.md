@@ -83,8 +83,7 @@ clojure -M:deps
 1. Clone o repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/todo-list-clj.git
-    cd todo-list-clj
+    git clone https://github.com/VictoriaSouzaS/learning-clojure.git
     ```
 
 2. Inicie a API REST:
