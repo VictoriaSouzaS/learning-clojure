@@ -5,12 +5,12 @@
             [adapter.input.todo-api :as api]
             [core.ports.todo-port :as port]
             [core.service.todo-service :as service]
-            [ring.adapter.jetty :as jetty]))
+            [ring.adapter.jetty :as jetty])) ;; Adaptador do Ring para o servidor Jetty
 
 (def config
   {:todo-repository {}
-   :todo-api {:handler (api/handler) ;; Corrigido para api/handler
-              :port 4000}})
+   :todo-api {:handler (api/handler)
+              :port 8081}})
 
 (defmethod ig/init-key :todo-repository [_ _]
   (repo/new-todo-repository))

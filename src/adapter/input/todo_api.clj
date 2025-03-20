@@ -7,8 +7,10 @@
             ;; Biblioteca conhecida por criar servidores HTTP assíncronos de alto desempenho em Clojure
             [cheshire.core :as json]
             ;; cheshire.core é uma biblioteca para trabalhar com JSON
-            [core.service.todo-service :refer [todo-service]]))
+            [core.service.todo-service :refer [todo-service]]
             ;; importa a variavel todo-service do namespace core.service.todo-service. Essa variavel contem a implementação do serviço que provê a lista de tasks
+            [config.app-config :refer [config]]))  ;; Adiciona a importação do config para obter a porta
+
 
 (defn filter-tasks [tasks criteria]
   "Filtra as tarefas baseadas nos critérios fornecidos"
@@ -34,10 +36,10 @@
 
 (defn start-server [& _]
   ;; define função chamada start-server. A qual é responsável por iniciar o servidor HTTP
-  (run-server handler {:port 8081}))
+  (let [port (get-in config [:todo-api :port] 8081)]  ;; Pega a porta do config, com fallback para 8081
+    (run-server handler {:port port})))  ;; Inicia o servidor na porta configurada
   ;; chama a função run-server para iniciar o servidor:
   ;; handler é a função que será usada para lidar com as requisições HTTP
-  ;; {:port 8080} define a porta em que o servidor irá escutar como 8080
 
 (comment
   (start-server)) ;; Inicie o servidor chamando essa função
