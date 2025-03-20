@@ -10,6 +10,12 @@
             [core.service.todo-service :refer [todo-service]]))
             ;; importa a variavel todo-service do namespace core.service.todo-service. Essa variavel contem a implementação do serviço que provê a lista de tasks
 
+(defn filter-tasks [tasks criteria]
+  "Filtra as tarefas baseadas nos critérios fornecidos"
+  (filter (fn [task]
+            (every? (fn [[k v]]
+                      (= (k task) v)) criteria))
+          tasks))
 
 (defn handler [req]
   ;; define uma função chamada handler. Função que será chamada para lidar com as requisições HTTP recebidas pelo servidor
@@ -28,7 +34,7 @@
 
 (defn start-server [& _]
   ;; define função chamada start-server. A qual é responsável por iniciar o servidor HTTP
-  (run-server handler {:port 8080}))
+  (run-server handler {:port 8081}))
   ;; chama a função run-server para iniciar o servidor:
   ;; handler é a função que será usada para lidar com as requisições HTTP
   ;; {:port 8080} define a porta em que o servidor irá escutar como 8080
