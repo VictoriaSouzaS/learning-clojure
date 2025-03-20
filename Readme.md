@@ -52,7 +52,8 @@ todo-list-clj/
 
 ## Tecnologias Usadas
 
-- **Clojure:** Linguagem funcional para desenvolvimento.
+- **Clojure:** Linguagem funcional para desenvolvimento. (+ Calva Extension no VSCode)
+- **clj-kondo** Para linting
 - **JSONPlaceholder:** API pública para simulação de tarefas.
 - **Clojure CLI:** Gerenciamento de dependências e execução.
 
