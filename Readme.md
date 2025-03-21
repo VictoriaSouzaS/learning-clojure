@@ -36,7 +36,7 @@ todo-list-clj/
 │   │   ├── input/
 │   │   │   └── todo-api.clj     # API REST para interação com o usuário
 │   │   ├── output/
-│   │   │   └── todo-client.clj  # Cliente HTTP para consumo da API externa
+│   │   │   └── todo-repository.clj  # Repositório para persistência (Output)
 ├── config/
 │   └── app-config.clj           # Configuração do sistema
 ├── deps.edn                     # Gerenciamento de dependências
